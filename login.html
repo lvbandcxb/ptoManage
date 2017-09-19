@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+	<style>
+	.img-div{
+		width: 100px;
+		height: 50px;
+		overflow: hidden;
+		float: left;
+	}
+
+	</style>
+</head>
+<body>
+<input type="button" id="btn" value="获取">
+
+<table class="table">
+	<tr><th>ID</th><th>标题</th><th>图片</th></tr>
+	<tbody id="list">
+		
+	</tbody>
+
+</table>
+
+<div id="atricle">
+	<h3></h3>
+	<span id="author"></span>
+	<div id="content"></div>
+</div>
+
+<script>
+$("#btn").click(function(){
+	var host = 'http://localhost/myh5/PrintErrorImg';
+	$.getJSON(host+'/checkLoginStatus.php?callback=?',{},function(data){
+		console.log(data);
+			
+	})	
+})
+</script>
+</body>
+</html>
